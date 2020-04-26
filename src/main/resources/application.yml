@@ -1,0 +1,38 @@
+################### Vert.x Configuration ##########################
+vertx:
+  worker:
+    pool:
+      size: 60
+  springWorker:
+    instances: 30
+
+logging:
+  level:
+    com:
+      ayit:
+        demo:
+         mapper: DEBUG
+#hsqldb
+#jdbcUrl:  jdbc:hsqldb:mem:test?shutdown=true
+#driverClassName:  org.hsqldb.jdbcDriver
+#username: SA
+#password:
+#maximumPoolSize: 100
+################### DataSource Configuration ##########################
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:testdb;shutdown=true
+    driver-class-name: org.hsqldb.jdbcDriver
+    username: SA
+    password:
+    schema: classpath:schema.sql
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    default-statement-timeout: 30
+    default-fetch-size: 100
+
+
+
+
